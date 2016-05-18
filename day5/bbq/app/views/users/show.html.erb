@@ -1,0 +1,6 @@
+<%if user_signed_in? %>
+<h2>welcome <%= current_user.name%>!</h2>
+<% link_to 'Logout' destroy_user_session_path method: 'DELETE' %>
+<% else %>
+<h2>Nobody loged in</h2>
+<%end%>

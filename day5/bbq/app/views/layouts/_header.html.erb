@@ -1,0 +1,17 @@
+<% if current_user %>
+<h1>HOME</h1>
+<h3>
+  welcome
+  <%=current_user.name%>
+  your email user is
+   <%=current_user.email%></br>
+   <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %></br>
+   <%= link_to 'edit', edit_user_registration_path%>
+</h3>
+
+<%else%>
+<h3>you must register plis
+<p><%= link_to 'sign up', new_user_registration_path %>
+<p><%= link_to 'sign in', new_user_session_path %>
+</h3>
+<%end%>
